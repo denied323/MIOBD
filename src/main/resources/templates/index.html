@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Strona domowa</title>
+</head>
+
+<body>
+
+<div id="main" class="container">
+    <span style="font-size: 30pt">
+        Strona główna<br><br>
+
+        <div th:each="samochody : ${samochody}">
+            <td><span th:text="${samochody}"></span></td>
+        </div>
+
+    </span>
+
+
+
+
+    <form th:method="POST" th:object="${formularz}">
+        <fieldset>
+
+            <br>
+            <label>Wybierz samochod:</label>
+            <div class="form-group blu-margin">
+                <select class="form-control" name="samochod" id="samochod">
+                    <option value="0">Wybierz</option>
+                    <option th:each="samochody : ${samochody}" th:value="${samochody}" th:text="${samochody}"></option>
+                </select>
+            </div>
+
+
+            <br>
+            <label>Wybierz stan pojazdu:</label>
+            <div class="form-group blu-margin">
+
+                <div>
+                    <input type="radio" id="bezwypadkowy" name="stan" value="bezwypadkowy">
+                    <label for="bezwypadkowy">bezwypadkowy</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="wypadkowy" name="stan" value="wypadkowy">
+                    <label for="wypadkowy">wypadkowy</label>
+                </div>
+            </div>
+
+
+            <br>
+            <label>Wybierz pojemnosc silnika:</label>
+            <div class="form-group blu-margin">
+                <select class="form-control" name="pojemnoscSilnika" id="pojemnoscSilnika">
+                    <option value="1.4">1.4</option>
+                    <option value="1.6">1.6</option>
+                    <option value="1.8">1.8</option>
+                    <option value="2.0">2.0</option>
+                    <option value="2.2">2.2</option>
+                    <option value="2.4">2.4</option>
+                    <option value="2.6">2.6</option>
+                </select>
+            </div>
+
+
+            <br>
+            <label>Wybierz typ silnika:</label>
+            <div class="form-group blu-margin">
+                <select class="form-control" name="typSilnika" id="typSilnika">
+                    <option value="1.4">spalinowy</option>
+                    <option value="1.6">hybrydowy</option>
+                    <option value="1.8">elektryczny</option>
+                </select>
+            </div>
+
+
+            <br>
+            <label>Wybierz typ ubezpieczenia:</label>
+            <div class="form-group blu-margin">
+
+                <div>
+                    <input type="radio" id="OC" name="typUbezpieczenia" value="OC">
+                    <label for="OC">OC</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="AC" name="typUbezpieczenia" value="AC">
+                    <label for="AC">AC</label>
+                </div>
+            </div>
+
+
+
+            <br>
+
+            <button type="submit" class="btn btn-primary btn-raised">Button</button>
+        </fieldset>
+    </form>
+
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>
