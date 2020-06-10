@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Strona domowa</title>
+</head>
+
+<body>
+
+<div id="main" class="container">
+
+
+
+
+
+yjsyjkufykuf
+
+
+    <!--    <span th:if="${czyWybranoSamochod == true}">-->
+    <form th:method="POST" th:object="${formularz}" action='/wynik'>
+        <fieldset>
+            <br>
+            <label>Wybierz samochod:</label>
+            <div class="form-group blu-margin">
+                <select class="form-control" name="samochod" id="samochod" required="required">
+                    <option th:value="${samochod}" th:text="${samochod}"  >     </option>
+                </select>
+            </div>
+            <br>
+
+
+            <label>Wybierz stan pojazdu:</label>
+            <div class="form-group blu-margin">
+                <div>
+                    <input type="radio" id="bezwypadkowy" name="stan" value="bezwypadkowy" checked>
+                    <label for="bezwypadkowy">bezwypadkowy</label>
+                </div>
+                <div>
+                    <input type="radio" id="wypadkowy" name="stan" value="wypadkowy">
+                    <label for="wypadkowy">wypadkowy</label>
+                </div>
+            </div>
+
+
+            <br>
+            <label>Wybierz pojemnosc silnika:</label>
+            <div class="form-group blu-margin">
+                <select class="form-control" name="pojemnoscSilnika" id="pojemnoscSilnika" required="required">
+                    <option value="" disabled selected>Wybierz</option>
+                    <option th:each="pojemnoscSilnika : ${pojemnoscSilnika}" th:value="${pojemnoscSilnika}" th:text="${pojemnoscSilnika}"></option>
+                </select>
+            </div>
+
+
+            <label>Wybierz typ Silnika:</label>
+            <div class="form-group blu-margin">
+                <select class="form-control" name="typSilnika" id="typSilnika" required="required">
+                    <option value="" disabled selected>Wybierz</option>
+                    <option th:each="typSilnika : ${typSilnika}" th:value="${typSilnika}" th:text="${typSilnika}"></option>
+                </select>
+            </div>
+
+
+
+            <br>
+            <label>Wybierz typ ubezpieczenia:</label>
+            <div class="form-group blu-margin">
+                <div>
+                    <input type="radio" id="OC" name="typUbezpieczenia" value="OC" checked>
+                    <label for="OC">OC</label>
+                </div>
+                <div>
+                    <input type="radio" id="AC" name="typUbezpieczenia" value="AC">
+                    <label for="AC">AC</label>
+                </div>
+            </div>
+
+
+
+
+            <button type="submit" class="btn btn-primary btn-raised">Button</button>
+        </fieldset>
+    </form>
+    <!--    </span>-->
+
+
+
+
+
+
+
+</div>
+
+</body>
+</html>

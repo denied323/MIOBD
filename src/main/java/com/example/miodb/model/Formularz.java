@@ -20,6 +20,28 @@ public class Formularz {
         this.pojemnoscSilnika = pojemnoscSilnika;
         this.typSilnika = typSilnika;
         this.typUbezpieczenia = typUbezpieczenia;
-
     }
+
+    public String getSamochod(){
+        return samochod;
+    }
+
+    public String getStan(){
+        return stan;
+    }
+
+    public String getPojemnoscSilnika(){
+        return pojemnoscSilnika;
+    }
+
+    public String getTypSilnika(){
+        return typSilnika;
+    }
+
+    public String getTypUbezpieczenia(){
+        return typUbezpieczenia;
+    }
+
+
+
 }
