@@ -20,6 +20,7 @@ public class Ubezpieczyciel {
     @Relationship(type="PojemnoscSilnika", direction = Relationship.INCOMING) private List<PojemnoscSilnika> pojemnoscSilnika;
     @Relationship(type="TypSilnika", direction = Relationship.INCOMING) private List<TypSilnika> typSilnika;
     @Relationship(type="TypUbezpieczenia", direction = Relationship.INCOMING) private List<TypUbezpieczenia> typUbezpieczenia;
+    @Relationship(type="Drzwi", direction = Relationship.INCOMING) private List<Drzwi> drzwi;
 
 
 

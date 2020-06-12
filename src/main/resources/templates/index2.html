@@ -93,7 +93,16 @@
                         </select>
                     </div>
 
+                    <label>Wybierz ilość drzwi:</label>
+                    <div class="form-group blu-margin">
+                        <select class="form-control" name="drzwi" id="drzwi" required="required">
+                            <option value="" disabled selected>Wybierz</option>l
+                            <option th:each="typSilnika,testa : ${drzwi}" th:value="${drzwi.get(testa.index)}" th:text="${drzwi.get(testa.index)}"></option>
+                        </select>
+                    </div>
 
+<!--                    <span th:text="${drzwi.get(1)}"></span>-->
+<!--                    <span th:text="${drzwi}"></span>-->
 
                     <br>
                     <label>Wybierz typ ubezpieczenia:</label>

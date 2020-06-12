@@ -32,10 +32,7 @@ public class WyszukajController {
     public String wybierzSamochod(Model model){
 
         List<String> samochody = zapytaniaRepository.getAllSamochod();
-        model.addAttribute("czyWybranoSamochod", false);
-
         model.addAttribute("samochody", samochody);
-
 
         return "index";
     }
@@ -44,20 +41,29 @@ public class WyszukajController {
     @RequestMapping(value="/", method= RequestMethod.POST)
     public String wybierzOpcje(Model model, @Valid @ModelAttribute("formularz") Formularz formularz, @RequestParam("samochod") String car){
 
+        final Logger logger = LoggerFactory.getLogger(WyszukajController.class);
 
             List<String> samochody = zapytaniaRepository.getAllSamochod();
             model.addAttribute("samochody", samochody);
-            model.addAttribute("czyWybranoSamochod", false);
             model.addAttribute("samochod", car);
 
             List<String> typSilnika = zapytaniaRepository.getAllTypSilnika(car);
             List<String> pojemnoscSilnika = zapytaniaRepository.getAllPojemnoscSilnika(car);
+            List<String> drzwi = zapytaniaRepository.getAllDrzwi(car);
+        List<String> drzwi2 = new ArrayList<>();
+
+            for(int i =0; i<drzwi.size(); i++){
+                System.out.println(drzwi.get(i));
+                logger.info(drzwi.get(i));
+                drzwi2.add(drzwi.get(i));
+            }
 
 
             model.addAttribute("typSilnika", typSilnika);
             model.addAttribute("pojemnoscSilnika", pojemnoscSilnika);
+            model.addAttribute("drzwi", drzwi2);
 
-            final Logger logger = LoggerFactory.getLogger(WyszukajController.class);
+
             logger.info("\n index2 \n");
 
             return "index2";
@@ -78,10 +84,11 @@ public class WyszukajController {
         String pojemnoscSilnika = test.getPojemnoscSilnika();
         String typSilnika = test.getTypSilnika();
         String typUbezpieczenia = test.getTypUbezpieczenia();
+        String drzwi = test.getDrzwi();
 
 
-        List<String> najlepszyUbezpieczycielNazwa = zapytaniaRepository.findNazwaBestUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
-        List<String> najlepszyUbezpieczycielCena = zapytaniaRepository.findCenaBestUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
+        List<String> najlepszyUbezpieczycielNazwa = zapytaniaRepository.findNazwaBestUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia, drzwi);
+        List<String> najlepszyUbezpieczycielCena = zapytaniaRepository.findCenaBestUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia, drzwi);
         for(int i =0; i<najlepszyUbezpieczycielCena.size(); i++){
             Formatter formatter = new Formatter();
             double temp = Double.parseDouble(najlepszyUbezpieczycielCena.get(i));
@@ -94,9 +101,9 @@ public class WyszukajController {
 
 
 
-        List<String> UbezpieczycielNazwa = zapytaniaRepository.findNazwaUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
+        List<String> UbezpieczycielNazwa = zapytaniaRepository.findNazwaUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia, drzwi);
 
-        List<String> UbezpieczycielCena = zapytaniaRepository.findCenaUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
+        List<String> UbezpieczycielCena = zapytaniaRepository.findCenaUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia, drzwi);
 
         List<PokazWyniki> wyniki = new ArrayList<>();
 

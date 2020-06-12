@@ -23,7 +23,7 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts3:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.25}]->(b)\n" +
-            "RETURN type(s1stan1)")
+            "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n")
     void audi80();
 
 
@@ -39,7 +39,7 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
-            "RETURN type(s1stan1)")
+            "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n")
     void mitsubishicarisma();
 
 
@@ -53,7 +53,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
-            "RETURN type(s1stan1)")
+            "CREATE (a)-[s1d1:Drzwi {drzwi: 'pięcio-drzwiowe', cena: 1.05}]->(b)\n" +
+            "CREATE (a)-[s1d2:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n" +
+            "CREATE (a)-[s1d3:Drzwi {drzwi: 'trzy-drzwiowe', cena: 0.95}]->(b)\n")
     void toyotatercel();
 
 
@@ -70,7 +72,8 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
-            "RETURN type(s1stan1)")
+            "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n" +
+            "CREATE (a)-[s1d2:Drzwi {drzwi: 'dwu-drzwiowe', cena: 0.9}]->(b)\n")
     void mazdamiata();
 
 
@@ -82,7 +85,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'hybrydowy', cena: 1.4}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
-            "RETURN type(s1stan1)")
+            "CREATE (a)-[s1d1:Drzwi {drzwi: 'pięcio-drzwiowe', cena: 1.05}]->(b)\n" +
+            "CREATE (a)-[s1d2:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n" +
+            "CREATE (a)-[s1d3:Drzwi {drzwi: 'dwu-drzwiowe', cena: 0.9}]->(b)\n")
     void toyotaprius();
 
     @Query("Match (a:Samochod),(b:Ubezpieczyciel) WHERE a.nazwa = 'Polonez Atu' AND b.nazwa = 'Axa'\n" +
@@ -94,7 +99,7 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'benzynowy', cena: 1.5}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
-            "RETURN type(s1stan1)")
+            "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n")
     void polonezatu();
 
 
@@ -107,7 +112,8 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts3:TypSilnika {typSilnika: 'elektryczny', cena: 1.3}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
-            "RETURN type(s1stan1)")
+            "CREATE (a)-[s1d1:Drzwi {drzwi: 'trzy-drzwiowe', cena: 0.95}]->(b)\n" +
+            "CREATE (a)-[s1d2:Drzwi {drzwi: 'dwu-drzwiowe', cena: 0.9}]->(b)\n")
     void teslaroadster();
 
 
@@ -122,7 +128,7 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
-            "RETURN type(s1stan1)")
+            "CREATE (a)-[s1d1:Drzwi {drzwi: 'dwu-drzwiowe', cena: 1.0}]->(b)\n")
     void lamborginidiablo();
 
 

@@ -12,14 +12,16 @@ public class Formularz {
     private String pojemnoscSilnika;
     private String typSilnika;
     private String typUbezpieczenia;
+    private String drzwi;
 
 
-    public Formularz(String samochod, String stan, String pojemnoscSilnika, String typSilnika, String typUbezpieczenia) {
+    public Formularz(String samochod, String stan, String pojemnoscSilnika, String typSilnika, String typUbezpieczenia, String drzwi) {
         this.samochod = samochod;
         this.stan = stan;
         this.pojemnoscSilnika = pojemnoscSilnika;
         this.typSilnika = typSilnika;
         this.typUbezpieczenia = typUbezpieczenia;
+        this.drzwi = drzwi;
     }
 
     public String getSamochod(){
@@ -42,6 +44,9 @@ public class Formularz {
         return typUbezpieczenia;
     }
 
+    public String getDrzwi(){
+        return drzwi;
+    }
 
 
 }
