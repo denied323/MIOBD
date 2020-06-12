@@ -1,119 +1,203 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
-    <title lang="pl-PL">Strona główna</title>
+    <title lang="pl-PL">Wybierz samochód</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-<div id="main" class="container">
+<center>
 
-
-<!--    <span th:if="${czyWybranoSamochod == false}">-->
-        <form th:method="POST" th:object="${formularz}">
-            <fieldset>
-                <br>
-                <label>Wybierz samochod:</label>
-                <div class="form-group blu-margin">
-                    <select class="form-control" name="samochod" id="samochod" required="required">
-                        <option value="" disabled selected>Wybierz</option>
-                        <option th:each="samochody : ${samochody}" th:value="${samochody}" th:text="${samochody}"></option>
-                    </select>
+    <div id="demo" class="carousel slide column-header flex-column" data-ride="carousel" data-interval="999">
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.tinypic.pl/i/01007/s6ig8qtxdeju.png" alt="1" width="100%" height="250">
+                <div class="carousel-caption" style="margin-top: -20px;">
+                    <a class="emboss-txt" href="http://localhost:8081/" style="margin-top: -10px;">Assicurator - porównywanie cen ubezpieczeń</a>
                 </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.tinypic.pl/i/01007/478f9ft21qo8.png" alt="2" width="100%" height="250">
+                <div class="carousel-caption" style="margin-top: -20px;">
+                    <a class="emboss-txt" href="http://localhost:8081/" style="margin-top: -10px;">Assicurator - porównywanie cen ubezpieczeń</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://files.tinypic.pl/i/01007/gux7x64dw38m.png" alt="3" width="100%" height="250">
+                <div class="carousel-caption" style="margin-top: -20px;">
+                    <a class="emboss-txt" href="http://localhost:8081/" style="margin-top: -10px;">Assicurator - porównywanie cen ubezpieczeń</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="https://files.tinypic.pl/i/01007/cjpc4nl0ll2m.png" alt="4" width="100%" height="250">
+                <div class="carousel-caption" style="margin-top: -20px;">
+                    <a class="emboss-txt" href="http://localhost:8081/" style="margin-top: -10px;">Assicurator - porównywanie cen ubezpieczeń</a>
+                </div>
+            </div>
+        </div>
+        <!-- The slideshow -->
+    </div>
+
+
+    <br><br/>
+
+
+    <div class="jumbotron align-items-center" style="width:30%; height:220%; border-radius: 64px;">
+        <div class="container-fluid text-center">
+
+            <form th:method="POST" th:object="${formularz}">
+                <fieldset>
+                    <br>
+                    <label>Wybierz samochod:</label>
+                    <div class="form-group blu-margin">
+                        <select class="form-control" name="samochod" id="samochod" required="required">
+                            <option value="" disabled selected>Wybierz</option>
+                            <option th:each="samochody : ${samochody}" th:value="${samochody}" th:text="${samochody}"></option>
+                        </select>
+                    </div>
 
 
 
 
-                <br>
-                <button type="submit" class="btn btn-primary btn-raised">Button</button>
-            </fieldset>
-        </form>
-<!--    </span>-->
-
-
-
-<!--&lt;!&ndash;    <span th:if="${czyWybranoSamochod == true}">&ndash;&gt;-->
-<!--        <form th:method="POST" th:object="${formularz}">-->
-<!--            <fieldset>-->
-<!--                <br>-->
-<!--                <label>Wybierz samochod:</label>-->
-<!--                <div class="form-group blu-margin">-->
-<!--                    <select class="form-control" name="samochod" id="samochod" required="required">-->
-<!--                        <option th:value="${samochod}" th:text="${samochod}" disabled selected />-->
-<!--                    </select>-->
-<!--                </div>-->
-<!--                <br>-->
-
-
-<!--                <label>Wybierz stan pojazdu:</label>-->
-<!--                <div class="form-group blu-margin">-->
-<!--                    <div>-->
-<!--                        <input type="radio" id="bezwypadkowy" name="stan" value="bezwypadkowy" checked>-->
-<!--                        <label for="bezwypadkowy">bezwypadkowy</label>-->
-<!--                    </div>-->
-<!--                    <div>-->
-<!--                        <input type="radio" id="wypadkowy" name="stan" value="wypadkowy">-->
-<!--                        <label for="wypadkowy">wypadkowy</label>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-
-<!--                <br>-->
-<!--                <label>Wybierz pojemnosc silnika:</label>-->
-<!--                <div class="form-group blu-margin">-->
-<!--                    <select class="form-control" name="pojemnoscSilnika" id="pojemnoscSilnika" required="required">-->
-<!--                        <option value="" disabled selected>Wybierz</option>-->
-<!--                            <option th:each="pojemnoscSilnika : ${pojemnoscSilnika}" th:value="${pojemnoscSilnika}" th:text="${pojemnoscSilnika}"></option>-->
-<!--                    </select>-->
-<!--                </div>-->
-
-
-<!--                <label>Wybierz typ Silnika:</label>-->
-<!--                <div class="form-group blu-margin">-->
-<!--                    <select class="form-control" name="typSilnika" id="typSilnika" required="required">-->
-<!--                        <option value="" disabled selected>Wybierz</option>-->
-<!--                            <option th:each="typSilnika : ${typSilnika}" th:value="${typSilnika}" th:text="${typSilnika}"></option>-->
-<!--                    </select>-->
-<!--                </div>-->
-
-
-
-<!--                <br>-->
-<!--                <label>Wybierz typ ubezpieczenia:</label>-->
-<!--                <div class="form-group blu-margin">-->
-<!--                    <div>-->
-<!--                        <input type="radio" id="OC" name="typUbezpieczenia" value="OC" checked>-->
-<!--                        <label for="OC">OC</label>-->
-<!--                    </div>-->
-<!--                    <div>-->
-<!--                        <input type="radio" id="AC" name="typUbezpieczenia" value="AC">-->
-<!--                        <label for="AC">AC</label>-->
-<!--                    </div>-->
-<!--                </div>-->
+                    <br>
+                    <button type="submit" class="btn btn-danger">Dalej</button>
+                </fieldset>
+            </form>
 
 
 
 
-<!--                <button type="submit" class="btn btn-primary btn-raised">Button</button>-->
-<!--            </fieldset>-->
-<!--        </form>-->
-<!--&lt;!&ndash;    </span>&ndash;&gt;-->
+        </div>
+    </div>
+
+</center>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 
 </body>
+<style>
+    table.blueTable {
+        font-family: Tahoma, Geneva, sans-serif;
+        border: 4px solid black;
+        background-color: #EEEEEE;
+        width: 102%;
+        height: 205%;
+        text-align: center;
+    }
+    table{
+        order-collapse: separate;
+        border-radius: 25px;
+        -moz-border-radius: 25px;
+    }
+    table.blueTable td, table.blueTable th {
+        border: 2px solid black;
+        padding: 10px 3px;
+    }
+    table.blueTable tbody td {
+        font-size: 16px;
+        font-weight: bold;
+        color: #000000;
+    }
+    table.blueTable tr:nth-child(even) {
+        background: #D0E4F5;
+    }
+    table.blueTable thead {
+        background: #1818C4;
+        background: -moz-linear-gradient(top, #5252d3 0%, #2f2fca 66%, #1818C4 100%);
+        background: -webkit-linear-gradient(top, #5252d3 0%, #2f2fca 66%, #1818C4 100%);
+        background: linear-gradient(to bottom, #5252d3 0%, #2f2fca 66%, #1818C4 100%);
+        border-bottom: 2px solid #444444;
+    }
+    table.blueTable thead th {
+        font-size: 30px;
+        font-weight: bold;
+        color: #FF3D84;
+        text-align: center;
+        border-left: 2px solid #D0E4F5;
+    }
+    table.blueTable thead th:first-child {
+        border-left: none;
+    }
+
+    table.blueTable tfoot td {
+        font-size: 14px;
+    }
+    table.blueTable tfoot .links {
+        text-align: right;
+    }
+    table.blueTable tfoot .links a {
+        display: inline-block;
+        background: #1C6EA4;
+        color: #FFFFFF;
+        padding: 2px 8px;
+        border-radius: 5px;
+    }
+    .carousel-inner img {
+        width: 100%;
+        height: 150px;
+    }
+    .carousel-caption {
+        transform: translateY(-50%);
+        bottom: 0;
+        top: 50%;
+    }
+
+    .emboss-txt {
+        position: relative;
+        font-size: 50px;
+        font-family: "Berlin Sans FB";
+        letter-spacing: 5px;
+        color:rgb(207,207,207);
+        text-shadow:
+            /*3D layers*/
+                0px 0px 1px rgb(167,167,167),
+                0px 1px 1px rgb(167,167,167),
+                0px 2px 1px rgb(167,167,167),
+                1px 1px 1px rgb(167,167,167),
+                1px 2px 1px rgb(167,167,167),
+                1px 3px 1px rgb(167,167,167),
+                2px 2px 1px rgb(167,167,167),
+                2px 3px 1px rgb(167,167,167),
+                2px 4px 1px rgb(167,167,167),
+                1px 10px 30px rgba(0,0,0,0.8),
+                1px 10px 70px rgba(0,0,0,0.8),
+                    /*short soft bottom*/
+                0px 5px 5px rgba(0,0,0,0.8),
+                    /*left shadow*/
+                -5px 5px 20px rgba(0,0,0,0.8),
+                    /*right shadow*/
+                5px 5px 20px rgba(0,0,0,0.8),
+                1px 1px 120px rgba(255,255,255,0.5);
+        position: relative;
+    }
+    .emboss-txt::after {
+        font-size: 180px;
+        letter-spacing: 5px;
+        font-family: dock11;
+        position: absolute;
+        top:0;
+        left:0;
+        text-shadow: 0px 0px 100px rgba(11,124,199,0.5);
+        animation: cycle 10s linear infinite;
+    }
+    @keyframes cycle {
+        0% { text-shadow: 0px 0px 100px rgba(11,124,199,0.5);}
+        20% { text-shadow: 0px 0px 100px rgba(168,11,199,0.5);}
+        40% { text-shadow: 0px 0px 100px rgba(11,199,96,0.5);}
+        60% { text-shadow: 0px 0px 100px rgba(199,11,11,0.5);}
+        80% { text-shadow: 0px 0px 100px rgba(199,96,11,0.5);}
+    }
+
+    body{
+
+    }
+</style>
 </html>

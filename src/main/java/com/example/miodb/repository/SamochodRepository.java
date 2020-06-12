@@ -10,57 +10,22 @@ import java.util.List;
 
 public interface SamochodRepository extends Neo4jRepository<Samochod, Long>{
 
-    @Query("MATCH (a:Samochod) return a.nazwa")
-    List<String> getAllSamochod();
-
-    @Query("MATCH (a:Samochod)-[c:PojemnoscSilnika]->(b:Ubezpieczyciel) \n" +
-            "where a.nazwa = $phrase " +
-            "return DISTINCT c.pojemnoscSilnika " +
-            "order by c.pojemnoscSilnika ASC")
-    List<String> getAllPojemnoscSilnika(@Param("phrase") String phrase);
-
-    @Query("MATCH (a:Samochod)-[c:TypSilnika]->(b:Ubezpieczyciel) " +
-            "where a.nazwa = $phrase " +
-            "return DISTINCT c.typSilnika")
-    List<String> getAllTypSilnika(@Param("phrase") String phrase);
-
-    @Query("match (a:Samochod)-[d:Stan]->(b:Ubezpieczyciel), " +
-            "(a)-[e:PojemnoscSilnika]->(b), " +
-            "(a)-[f:TypSilnika]->(b), " +
-            "(a)-[g:TypUbezpieczenia]->(b) " +
-            "where a.nazwa = $nazwaSamochodu AND d.stan = $nazwaStanu AND e.pojemnoscSilnika = $nazwaPojemnoscSilnika AND f.typSilnika = $nazwaTypSilnika AND g.stan = $nazwaTypuUbezpieczenia " +
-            "return b.nazwa as nazwa " +
-            "ORDER BY (a.cena*(d.cena + e.cena + f.cena + g.cena)) ASC limit 1")
-    List<String> findNazwaBestUbezpieczenie(@Param("nazwaSamochodu") String nazwaSamochodu, @Param("nazwaStanu") String nazwaStanu, @Param("nazwaPojemnoscSilnika") String nazwaPojemnoscSilnika, @Param("nazwaTypSilnika") String nazwaTypSilnika, @Param("nazwaTypuUbezpieczenia") String nazwaTypuUbezpieczenia);
-
-    @Query("match (a:Samochod)-[d:Stan]->(b:Ubezpieczyciel), " +
-            "(a)-[e:PojemnoscSilnika]->(b), " +
-            "(a)-[f:TypSilnika]->(b), " +
-            "(a)-[g:TypUbezpieczenia]->(b) " +
-            "where a.nazwa = $nazwaSamochodu AND d.stan = $nazwaStanu AND e.pojemnoscSilnika = $nazwaPojemnoscSilnika AND f.typSilnika = $nazwaTypSilnika AND g.stan = $nazwaTypuUbezpieczenia " +
-            "return a.cena*(d.cena + e.cena + f.cena + g.cena) as cena " +
-            "order by cena ASC limit 1")
-    List<String> findCenaBestUbezpieczenie(@Param("nazwaSamochodu") String nazwaSamochodu, @Param("nazwaStanu") String nazwaStanu, @Param("nazwaPojemnoscSilnika") String nazwaPojemnoscSilnika, @Param("nazwaTypSilnika") String nazwaTypSilnika, @Param("nazwaTypuUbezpieczenia") String nazwaTypuUbezpieczenia);
+    /*
+        Inicjalizer:
+    */
+    @Query("CREATE(s1: Samochod { nazwa: 'Audi 80', cena: 425.25})\n" +
+            "CREATE(s2: Samochod { nazwa: 'Mitsubishi Carisma', cena: 480.40})\n" +
+            "CREATE(s3: Samochod { nazwa: 'Toyota Ercel', cena: 500.70})\n" +
+            "CREATE(s4: Samochod { nazwa: 'Mazda MX-5 II (Miata)', cena: 500.0})\n" +
+            "CREATE(s5: Samochod { nazwa: 'Toyota Prius', cena: 500.25})\n" +
+            "CREATE(s6: Samochod { nazwa: 'Polonez Atu', cena: 562.77})\n" +
+            "CREATE(s7: Samochod { nazwa: 'Tesla Roadster', cena: 1450.60})\n" +
+            "CREATE(s8: Samochod { nazwa: 'Lamborghini Diablo', cena: 1500.40})")
+    void createSamochod();
 
 
 
-    @Query("match (a:Samochod)-[d:Stan]->(b:Ubezpieczyciel), " +
-            "(a)-[e:PojemnoscSilnika]->(b), " +
-            "(a)-[f:TypSilnika]->(b), " +
-            "(a)-[g:TypUbezpieczenia]->(b) " +
-            "where a.nazwa = $nazwaSamochodu AND d.stan = $nazwaStanu AND e.pojemnoscSilnika = $nazwaPojemnoscSilnika AND f.typSilnika = $nazwaTypSilnika AND g.stan = $nazwaTypuUbezpieczenia " +
-            "return b.nazwa as nazwa " +
-            "ORDER BY (a.cena*(d.cena + e.cena + f.cena + g.cena)) ASC ")
-    List<String> findNazwaUbezpieczenie(@Param("nazwaSamochodu") String nazwaSamochodu, @Param("nazwaStanu") String nazwaStanu, @Param("nazwaPojemnoscSilnika") String nazwaPojemnoscSilnika, @Param("nazwaTypSilnika") String nazwaTypSilnika, @Param("nazwaTypuUbezpieczenia") String nazwaTypuUbezpieczenia);
 
-    @Query("match (a:Samochod)-[d:Stan]->(b:Ubezpieczyciel), " +
-            "(a)-[e:PojemnoscSilnika]->(b), " +
-            "(a)-[f:TypSilnika]->(b), " +
-            "(a)-[g:TypUbezpieczenia]->(b) " +
-            "where a.nazwa = $nazwaSamochodu AND d.stan = $nazwaStanu AND e.pojemnoscSilnika = $nazwaPojemnoscSilnika AND f.typSilnika = $nazwaTypSilnika AND g.stan = $nazwaTypuUbezpieczenia " +
-            "return a.cena*(d.cena + e.cena + f.cena + g.cena) as cena " +
-            "order by cena ASC ")
-    List<String> findCenaUbezpieczenie(@Param("nazwaSamochodu") String nazwaSamochodu, @Param("nazwaStanu") String nazwaStanu, @Param("nazwaPojemnoscSilnika") String nazwaPojemnoscSilnika, @Param("nazwaTypSilnika") String nazwaTypSilnika, @Param("nazwaTypuUbezpieczenia") String nazwaTypuUbezpieczenia);
 
 
 

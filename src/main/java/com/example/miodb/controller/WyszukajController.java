@@ -3,6 +3,7 @@ package com.example.miodb.controller;
 
 import com.example.miodb.model.*;
 import com.example.miodb.repository.SamochodRepository;
+import com.example.miodb.repository.ZapytaniaRepository;
 import lombok.var;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +26,17 @@ import java.util.List;
 public class WyszukajController {
 
     @Autowired
-    private SamochodRepository samochodRepository;
+    private ZapytaniaRepository zapytaniaRepository;
 
     @GetMapping("/")
     public String wybierzSamochod(Model model){
 
-        List<String> samochody = samochodRepository.getAllSamochod();
+        List<String> samochody = zapytaniaRepository.getAllSamochod();
         model.addAttribute("czyWybranoSamochod", false);
 
         model.addAttribute("samochody", samochody);
+
+
         return "index";
     }
 
@@ -42,13 +45,13 @@ public class WyszukajController {
     public String wybierzOpcje(Model model, @Valid @ModelAttribute("formularz") Formularz formularz, @RequestParam("samochod") String car){
 
 
-            List<String> samochody = samochodRepository.getAllSamochod();
+            List<String> samochody = zapytaniaRepository.getAllSamochod();
             model.addAttribute("samochody", samochody);
             model.addAttribute("czyWybranoSamochod", false);
             model.addAttribute("samochod", car);
 
-            List<String> typSilnika = samochodRepository.getAllTypSilnika(car);
-            List<String> pojemnoscSilnika = samochodRepository.getAllPojemnoscSilnika(car);
+            List<String> typSilnika = zapytaniaRepository.getAllTypSilnika(car);
+            List<String> pojemnoscSilnika = zapytaniaRepository.getAllPojemnoscSilnika(car);
 
 
             model.addAttribute("typSilnika", typSilnika);
@@ -69,7 +72,6 @@ public class WyszukajController {
     public String test(Model model, @Valid @ModelAttribute("formularz") Formularz test){
 
         final Logger logger = LoggerFactory.getLogger(WyszukajController.class);
-        logger.info("\n\n===========================================\n\n wypisz ubezpieczenie \n\n======================================" + test.toString());
 
         String samochod = test.getSamochod();
         String stan = test.getStan();
@@ -77,32 +79,24 @@ public class WyszukajController {
         String typSilnika = test.getTypSilnika();
         String typUbezpieczenia = test.getTypUbezpieczenia();
 
-        logger.info(samochod);
-        logger.info(stan);
-        logger.info(pojemnoscSilnika);
-        logger.info(typSilnika);
-        logger.info(typUbezpieczenia);
 
-        List<String> najlepszyUbezpieczycielNazwa = samochodRepository.findNazwaBestUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
-        List<String> najlepszyUbezpieczycielCena = samochodRepository.findCenaBestUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
+        List<String> najlepszyUbezpieczycielNazwa = zapytaniaRepository.findNazwaBestUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
+        List<String> najlepszyUbezpieczycielCena = zapytaniaRepository.findCenaBestUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
         for(int i =0; i<najlepszyUbezpieczycielCena.size(); i++){
             Formatter formatter = new Formatter();
             double temp = Double.parseDouble(najlepszyUbezpieczycielCena.get(i));
             formatter.format("%.2f%n", temp);
             String formattedString = formatter.toString();
             najlepszyUbezpieczycielCena.set(i, formattedString);
-            logger.info("zmieniono");
-        }
 
-        logger.info("\n\n Najlepszy:");
-        for(int i =0; i<najlepszyUbezpieczycielCena.size(); i++){
-            logger.info(najlepszyUbezpieczycielNazwa.get(i) + " " + najlepszyUbezpieczycielCena.get(i));
         }
 
 
-        List<String> UbezpieczycielNazwa = samochodRepository.findNazwaUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
 
-        List<String> UbezpieczycielCena = samochodRepository.findCenaUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
+
+        List<String> UbezpieczycielNazwa = zapytaniaRepository.findNazwaUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
+
+        List<String> UbezpieczycielCena = zapytaniaRepository.findCenaUbezpieczenie(samochod, stan, pojemnoscSilnika, typSilnika, typUbezpieczenia);
 
         List<PokazWyniki> wyniki = new ArrayList<>();
 
