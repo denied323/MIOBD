@@ -13,14 +13,14 @@ public interface SamochodRepository extends Neo4jRepository<Samochod, Long>{
     /*
         Inicjalizer:
     */
-    @Query("CREATE(s1: Samochod { nazwa: 'Audi 80', cena: 500.25})\n" +
-            "CREATE(s2: Samochod { nazwa: 'Mitsubishi Carisma', cena: 500.40})\n" +
-            "CREATE(s3: Samochod { nazwa: 'Toyota Ercel', cena: 500.70})\n" +
-            "CREATE(s4: Samochod { nazwa: 'Mazda MX-5 II (Miata)', cena: 500.0})\n" +
-            "CREATE(s5: Samochod { nazwa: 'Toyota Prius', cena: 500.25})\n" +
-            "CREATE(s6: Samochod { nazwa: 'Polonez Atu', cena: 500.77})\n" +
-            "CREATE(s7: Samochod { nazwa: 'Tesla Roadster', cena: 500.60})\n" +
-            "CREATE(s8: Samochod { nazwa: 'Lamborghini Diablo', cena: 500.40})")
+    @Query("CREATE(s1: Samochod { nazwa: 'Audi 80', rokOd: 1991, rokDo: 1995})\n" +
+            "CREATE(s2: Samochod { nazwa: 'Mitsubishi Carisma', rokOd: 1995, rokDo: 2004})\n" +
+            "CREATE(s3: Samochod { nazwa: 'Toyota Ercel', rokOd: 1978, rokDo: 1999})\n" +
+            "CREATE(s4: Samochod { nazwa: 'Mazda MX-5 II (Miata)', rokOd: 1989, rokDo: 1998})\n" +
+            "CREATE(s5: Samochod { nazwa: 'Toyota Prius', rokOd: 2009, rokDo: 2015})\n" +
+            "CREATE(s6: Samochod { nazwa: 'Polonez Atu', rokOd: 1996, rokDo: 1997})\n" +
+            "CREATE(s7: Samochod { nazwa: 'Tesla Roadster', rokOd: 2019, rokDo: 2020 })\n" +
+            "CREATE(s8: Samochod { nazwa: 'Lamborghini Diablo', rokOd: 1991, rokDo: 2000})")
     void createSamochod();
 
 

@@ -21,8 +21,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ps9:PojemnoscSilnika {pojemnoscSilnika: '2.8E Quaddro 174 KM', cena: 3.0}]->(b)\n" +
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'benzynowy', cena: 1.5}]->(b)\n" +
             "CREATE (a)-[s1ts3:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)" +
-            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
+            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.25}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.0027}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n")
     void audi80();
 
@@ -39,6 +40,7 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.0027}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n")
     void mitsubishicarisma();
 
@@ -51,8 +53,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ps2:PojemnoscSilnika {pojemnoscSilnika: 'R4 1.5 TD 109 KM', cena: 1.49}]->(b)\n" +
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'benzynowy', cena: 1.5}]->(b)\n" +
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
-            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
+            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.0027}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'pięcio-drzwiowe', cena: 1.05}]->(b)\n" +
             "CREATE (a)-[s1d2:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1d3:Drzwi {drzwi: 'trzy-drzwiowe', cena: 0.95}]->(b)\n")
@@ -70,8 +73,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ps6:PojemnoscSilnika {pojemnoscSilnika: '2.0i R4 167 KM', cena: 1.97}]->(b)\n" +
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'benzynowy', cena: 1.5}]->(b)\n" +
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
-            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
+            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.0027}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1d2:Drzwi {drzwi: 'dwu-drzwiowe', cena: 0.9}]->(b)\n")
     void mazdamiata();
@@ -83,8 +87,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ps1:PojemnoscSilnika {pojemnoscSilnika: '1.8 96 KM', cena: 1.75}]->(b)\n" +
             "CREATE (a)-[s1ps2:PojemnoscSilnika {pojemnoscSilnika: '1.8 116 KM', cena: 1.8}]->(b)\n" +
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'hybrydowy', cena: 1.4}]->(b)\n" +
-            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
+            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.0027}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'pięcio-drzwiowe', cena: 1.05}]->(b)\n" +
             "CREATE (a)-[s1d2:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1d3:Drzwi {drzwi: 'dwu-drzwiowe', cena: 0.9}]->(b)\n")
@@ -97,8 +102,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ps2:PojemnoscSilnika {pojemnoscSilnika: '1.6 GLI 80 KM', cena: 1.5}]->(b)\n" +
             "CREATE (a)-[s1ps3:PojemnoscSilnika {pojemnoscSilnika: '1.9 GLD 70 KM', cena: 1.4}]->(b)\n" +
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'benzynowy', cena: 1.5}]->(b)\n" +
-            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
+            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.0027}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.0}]->(b)\n")
     void polonezatu();
 
@@ -110,8 +116,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ps2:PojemnoscSilnika {pojemnoscSilnika: 'Sport model 248 KM', cena: 3.5}]->(b)\n" +
             "CREATE (a)-[s1ps3:PojemnoscSilnika {pojemnoscSilnika: 'Sport model 288 KM', cena: 3.8}]->(b)\n" +
             "CREATE (a)-[s1ts3:TypSilnika {typSilnika: 'elektryczny', cena: 1.3}]->(b)\n" +
-            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
+            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.0027}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'trzy-drzwiowe', cena: 0.95}]->(b)\n" +
             "CREATE (a)-[s1d2:Drzwi {drzwi: 'dwu-drzwiowe', cena: 0.9}]->(b)\n")
     void teslaroadster();
@@ -126,8 +133,9 @@ public interface AxaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ps4:PojemnoscSilnika {pojemnoscSilnika: '6.0 V12 550 KM', cena: 5.2}]->(b)\n" +
             "CREATE (a)-[s1ps5:PojemnoscSilnika {pojemnoscSilnika: '6.0 V12 575 KM', cena: 5.41}]->(b)\n" +
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
-            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.36}]->(b)\n" +
+            "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.1}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.0027}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'dwu-drzwiowe', cena: 1.0}]->(b)\n")
     void lamborginidiablo();
 

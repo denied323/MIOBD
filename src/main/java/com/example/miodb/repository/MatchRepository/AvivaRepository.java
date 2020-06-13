@@ -23,6 +23,7 @@ public interface AvivaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts3:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.0}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.002}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.05}]->(b)\n")
     void audi80();
 
@@ -39,6 +40,7 @@ public interface AvivaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.0}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.002}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.05}]->(b)\n")
     void mitsubishicarisma();
 
@@ -53,6 +55,7 @@ public interface AvivaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.0}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.002}]->(b)\n" +
             "CREATE (a)-[s1tu0:Drzwi {drzwi: 'pięcio-drzwiowe', cena: 1.15}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.05}]->(b)\n" +
             "CREATE (a)-[s1d2:Drzwi {drzwi: 'trzy-drzwiowe', cena: 1.025}]->(b)\n")
@@ -72,6 +75,7 @@ public interface AvivaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts2:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.0}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.002}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.05}]->(b)\n" +
             "CREATE (a)-[s1d2:Drzwi {drzwi: 'dwu-drzwiowe', cena: 1.0}]->(b)\n")
     void mazdamiata();
@@ -85,6 +89,7 @@ public interface AvivaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'hybrydowy', cena: 1.4}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.0}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.002}]->(b)\n" +
             "CREATE (a)-[s1tu0:Drzwi {drzwi: 'pięcio-drzwiowe', cena: 1.15}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.05}]->(b)\n" +
             "CREATE (a)-[s1d2:Drzwi {drzwi: 'dwu-drzwiowe', cena: 1.0}]->(b)\n")
@@ -99,6 +104,7 @@ public interface AvivaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'benzynowy', cena: 1.5}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.0}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.002}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'cztero-drzwiowe', cena: 1.05}]->(b)\n")
     void polonezatu();
 
@@ -112,6 +118,7 @@ public interface AvivaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts3:TypSilnika {typSilnika: 'elektryczny', cena: 1.3}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.0}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.002}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'trzy-drzwiowe', cena: 1.025}]->(b)\n" +
             "CREATE (a)-[s1d2:Drzwi {drzwi: 'dwu-drzwiowe', cena: 1.0}]->(b)\n")
     void teslaroadster();
@@ -128,6 +135,7 @@ public interface AvivaRepository extends Neo4jRepository<Samochod, Long> {
             "CREATE (a)-[s1ts1:TypSilnika {typSilnika: 'diesel', cena: 1.6}]->(b)\n" +
             "CREATE (a)-[s1tu1:TypUbezpieczenia {typUbezpieczenia: 'OC', cena: 1.0}]->(b)\n" +
             "CREATE (a)-[s1tu2:TypUbezpieczenia {typUbezpieczenia: 'AC', cena: 2.0}]->(b)\n" +
+            "CREATE (a)-[s1r1:Rok {cena: 0.002}]->(b)\n" +
             "CREATE (a)-[s1d1:Drzwi {drzwi: 'dwu-drzwiowe', cena: 1.0}]->(b)\n")
     void lamborginidiablo();
 

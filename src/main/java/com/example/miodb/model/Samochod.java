@@ -17,12 +17,15 @@ public class Samochod {
     @Id
     private Long id;
     private String nazwa;
-    private Double cena;
+//    private Double cena;
+    private int rokOd;
+    private int rokDo;
 
 
-    public Samochod(String nazwa, Double cena) {
+    public Samochod(String nazwa, int rokOd, int rokDo) {
         this.nazwa = nazwa;
-        this.cena = cena;
+        this.rokOd = rokOd;
+        this.rokDo = rokDo;
     }
 
 

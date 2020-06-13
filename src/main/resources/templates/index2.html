@@ -101,6 +101,14 @@
                         </select>
                     </div>
 
+                    <label>Wybierz rok:</label>
+                    <div class="form-group blu-margin">
+                        <select class="form-control" name="rok" id="rok" required="required">
+                            <option value="" disabled selected>Wybierz</option>
+                            <option th:each="rok : ${rok}" th:value="${rok}" th:text="${rok}"></option>
+                        </select>
+                    </div>
+
 <!--                    <span th:text="${drzwi.get(1)}"></span>-->
 <!--                    <span th:text="${drzwi}"></span>-->
 

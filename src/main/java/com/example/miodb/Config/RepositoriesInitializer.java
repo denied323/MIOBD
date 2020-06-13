@@ -47,6 +47,9 @@ public class RepositoriesInitializer {
 
         return () -> {
 
+
+            zapytaniaRepository.wyczysc();
+
             if (zapytaniaRepository.getAllSamochod().isEmpty()) {//przyjmijmy, że jeśli repozytorium typów jest puste, to trzeba zainicjalizować bazę danych
 
                 samochodRepository.createSamochod();
